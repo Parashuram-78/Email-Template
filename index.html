@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Email</title>
+    <link href="https://fonts.googleapis.com/css?family=DM Sans" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="main-container">
+      <button type="button" class="btn-theme" id="btn-theme" onclick="toggleTheme()">Dark</button>
+      <header class="header">
+        <img src="./images/logo.svg" />
+      </header>
+      <div class="top-container">
+        <div class="left-container">
+          <div class="text-container">
+            <p class="text-small">Congratulations!</p>
+            <p class="text-medium">You are</p>
+            <p class="text-large">Waitlisted</p>
+          </div>
+        </div>
+        <div class="right-container">
+          <img src="./images/image.svg" />
+        </div>
+      </div>
+      <div class="middle-container">
+        <h1 class="text-1">It’s easy to use App! 🎉</h1>
+        <h2 class="text-2">Refer up to 3 friends every month. Get AED 10.</h2>
+        <p class="text-3">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit nisl, viverra potenti sem vel nam eros neque. Nulla viverra
+          sit feugiat volutpat in eros diam quam sed.
+        </p>
+        <div class="mid-inner-container">
+          <h3 class="text-4">Help everybody get debt-free with Vance</h3>
+          <div class="container">
+            <img src="./images/icon1.svg" />
+            <p class="text-5">Pay off cards up to 8x faster</p>
+          </div>
+          <div class="container">
+            <img src="./images/icon2.svg" />
+            <p class="text-5">Boost credit scores up to 60 points</p>
+          </div>
+          <div class="container">
+            <img src="./images/icon3.svg" />
+            <p class="text-5">Save up to AED 50/year on fees and charges</p>
+          </div>
+        </div>
+        <hr class="separator" />
+        <p class="text-3">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit nisl, viverra potenti sem vel nam eros neque. Nulla viverra
+          sit feugiat volutpat in eros diam quam sed.
+        </p>
+        <div class="btn-container">
+          <button class="btn-1">Get $96 off now</button>
+        </div>
+      </div>
+      <footer class="footer">
+        <p class="text-6">Connect with Vance on social</p>
+        <div class="icon-container">
+          <img class="icon" src="./images/Facebook.svg" />
+          <img class="icon" src="./images/LinkedIn.svg" />
+          <img class="icon" src="./images/Instagram.svg" />
+          <img class="icon" src="./images/Twitter.svg" />
+        </div>
+        <p class="text-7">Not interested? <u><b style="cursor:pointer;">Unsubscribe</b></u> from this list</p>
+        <p class="text-8">Vance Techlabs Private Limited<br />Vance HQ, 1st Block Koramangala, Bengaluru, KA 560034</p>
+      </footer>
+    </div>
+    <script>
+      // function to set a given theme/color-scheme
+      function setTheme(themeName) {
+        localStorage.setItem("theme", themeName);
+        document.documentElement.className = themeName;
+      }
+
+      // function to toggle between light and dark theme
+      function toggleTheme() {
+        if (localStorage.getItem("theme") === "theme-dark") {
+          setTheme("theme-light");
+          document.getElementById("btn-theme").innerHTML = "Dark";
+        } else {
+            setTheme("theme-dark");
+            document.getElementById("btn-theme").innerHTML = "Light";
+        }
+      }
+
+      // Immediately invoked function to set the theme on initial load
+      (function () {
+        if (localStorage.getItem("theme") === "theme-dark") {
+          setTheme("theme-dark");
+          document.getElementById("btn-theme").innerHTML = "Light";
+        } else {
+          setTheme("theme-light");
+          document.getElementById("btn-theme").innerHTML = "Dark";
+        }
+      })();
+    </script>
+  </body>
+</html>
